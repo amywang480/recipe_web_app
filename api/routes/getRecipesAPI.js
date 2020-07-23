@@ -1,11 +1,13 @@
-import apiConfig from '../apiKey';
+require('dotenv').config();
 
 var express = require("express");
 var router = express.Router();
 const http = require('https');
+const apiKey = process.env.API_KEY;
 
 var testIngredients = 'apples,+flour,+sugar';
-var url = 'https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + testIngredients + '&apiKey=' + apiConfig.recipeKey + '&number=100';
+var url = 'https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + testIngredients +
+    '&apiKey=' + apiKey + '&number=100';
 
 router.get('/', async (req, res) => {
     http.get(url, function (result) {
