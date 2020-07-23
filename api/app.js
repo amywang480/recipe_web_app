@@ -1,10 +1,11 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require("cors");
-var key = require('./apiKey.env');
+//var key = require('./routes/apiKey.env');
 
 // require express to use routes
 var indexRouter = require('./routes/index');

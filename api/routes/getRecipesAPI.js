@@ -1,9 +1,9 @@
-require('dotenv').config();
-
 var express = require("express");
 var router = express.Router();
 const http = require('https');
 const apiKey = process.env.API_KEY;
+
+console.log(apiKey);
 
 var testIngredients = 'apples,+flour,+sugar';
 var url = 'https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + testIngredients +
