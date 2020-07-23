@@ -4,7 +4,8 @@ var express = require("express");
 var router = express.Router();
 const http = require('https');
 
-var url = 'https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&apiKey=' + apiConfig.recipeKey + '&number=100';
+var testIngredients = 'apples,+flour,+sugar';
+var url = 'https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + testIngredients + '&apiKey=' + apiConfig.recipeKey + '&number=100';
 
 router.get('/', async (req, res) => {
     http.get(url, function (result) {
