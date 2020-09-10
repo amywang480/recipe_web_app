@@ -1,0 +1,211 @@
+@font-face {
+  font-family: martel;
+  src: url(./fonts/Martel.ttf);
+}
+
+.first-container{
+  background-image: url(./images/Bg-Img.jpg);
+  width: 98vw;
+  height: 98vh;
+  margin: 0;
+}
+
+.second-container {
+  background-image: url(./images/Bg-Img.jpg);
+  width: 98vw;
+  height: 255vh;
+  margin: 0;
+  background-repeat: repeat;
+}
+
+.title {
+  font-family: martel;
+  font-size: 105px;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.page-title {
+  line-height: 120%;
+  font-family: martel;
+  font-size: 41px;
+  position: absolute;
+  top: 17%;
+  left: 50.3%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.frame {
+  width: 55vw;
+  height: 70vh;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.title-frame {
+  width: 22vw;
+  height: 25vh;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  top: 20%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.ingre-frame {
+  width: 50vw;
+  height: 90vh;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  top: 50%;
+  left: 70%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.main {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.button {
+  margin: 0;
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: martel;
+  font-size: 22px;
+  transition-duration: 0.4s;
+  background-color: #70c6a1;
+  color: white;
+  border: 2px solid #70c6a1;
+  border-radius: 15px;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #70c6a1;
+}
+
+.App {
+  text-align: center;
+}
+
+.ingre-header {
+  font-family: martel;
+  font-size: 30px;
+  position: absolute;
+  top: 44%;
+  left: 60%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.ingre-checkbox {
+  padding: 2%;
+  padding-top: 1.5%;
+  margin: 0;
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 25px;
+}
+
+.find-recipe {
+  font-family: martel;
+  font-size: 22px;
+  transition-duration: 0.4s;
+  background-color: #70c6a1;
+  color: white;
+  border: 2px solid #70c6a1;
+  border-radius: 15px;
+}
+
+.find-recipe:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #70c6a1;
+}
+
+.category {
+  font-family: martel;
+  margin-bottom: 0;
+}
+
+.recipe-card {
+  padding: 2%;
+  padding-top: 1.5%;
+  margin: 0;
+  top: 50%;
+  position: relative;
+  background-color: white;
+  border-radius: 25px;
+  width: 20%;
+  margin-bottom: 1%;
+}
+
+.matches {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+.recipe-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recipe-text {
+  font-family: martel;
+  line-height: 0.5%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #70c6a1;
+}
+
+.overlay-text {
+  font-family: martel;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.image-overlay {
+  position: relative;
+}
+
+.image-overlay:hover .overlay {
+  opacity: 1;
+}

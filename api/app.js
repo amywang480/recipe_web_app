@@ -5,7 +5,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require("cors");
-//var key = require('./routes/apiKey.env');
 
 // require express to use routes
 var indexRouter = require('./routes/index');

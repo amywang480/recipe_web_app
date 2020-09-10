@@ -3,26 +3,35 @@ var router = express.Router();
 const http = require('https');
 const apiKey = process.env.API_KEY;
 
-console.log(apiKey);
-
-var testIngredients = 'apples,+flour,+sugar';
-var url = 'https://api.spoonacular.com/recipes/findByIngredients?ingredients=' + testIngredients +
-    '&apiKey=' + apiKey + '&number=100';
-
 router.get('/', async (req, res) => {
-    http.get(url, function (result) {
-        var body = '';
+    var params = Object.values(req.query);
 
-        result.on('data', function (chunk) {
+    var searchIngredients = "";
+    var url = "";
+
+    for (var i = 0; i < params.length; i++) {
+        searchIngredients += "+" + params[i] + ",";
+    }
+
+    searchIngredients = searchIngredients.substring(1, searchIngredients.length - 1);
+    console.log("search ", searchIngredients);
+
+    url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" +
+        searchIngredients + "&apiKey=" + apiKey + "&number=100";
+
+    http.get(url, function (result) {
+        var body = "";
+
+        result.on("data", function (chunk) {
             body += chunk;
         });
 
-        result.on('end', function () {
+        result.on("end", function () {
             var response = JSON.parse(body);
             res.send(response);
         });
 
-    }).on('error', function (e) {
+    }).on("error", function (e) {
         console.log("Got an error: ", e);
     });
 });
