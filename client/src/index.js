@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./home_page";
 import Select from "./select_page";
 import Matches from "./matches_page";
+import Recipe from './recipe_page';
 
 const rootElement = document.getElementById("root");
 
@@ -14,6 +15,7 @@ ReactDOM.render(
     <Route exact path="/" component={Home} />
     <Route exact path="/select" component={Select} />
     <Route exact path="/matches" component={Matches} />
+    <Route exact path="/recipe" component={Recipe} />
     </Switch>
   </BrowserRouter>,
   rootElement);

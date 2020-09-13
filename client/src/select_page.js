@@ -89,7 +89,7 @@ class Select extends React.Component {
               style={{ textDecoration: 'none' }}>
               <button className='find-recipe'>
                 Find Recipes
-            </button>
+              </button>
             </Link>
           </center>
 

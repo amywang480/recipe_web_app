@@ -10,6 +10,7 @@ var cors = require("cors");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testAPIRouter = require('./routes/getRecipesAPI');
+var recipeRouter = require('./routes/getRecipe');
 var app = express();
 
 // view engine setup
@@ -23,10 +24,19 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// creating new routes (from api/routes)
+// creating new routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/getRecipesAPI', testAPIRouter);
+app.use('/getRecipe', recipeRouter);
+
+app.use(function (req, res, next) {
+  //res.header("Access-Control-Allow-Origin", "http://localhost:9000/getRecipesAPI");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, HEAD');
+  next();
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -42,13 +52,6 @@ app.use(function (err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://localhost:9000/getRecipesAPI");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-  res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
-  next();
 });
 
 module.exports = app;
