@@ -14,7 +14,7 @@ const MatchedRecipes = ({ matched_recipes }) => {
                     <div className="recipe-card">
                         <div className="recipe-card-body">
                             <div className='image-overlay'>
-                                <center>
+                                <center className='card-container'>
                                     <img className='recipe-img' src={recipe.image} alt=""></img>
                                     <div className="overlay">
                                         <div className="overlay-text">{recipe.title}</div>

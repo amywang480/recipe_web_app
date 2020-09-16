@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
     console.log("search ", searchIngredients);
 
     url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" +
-        searchIngredients + "&apiKey=" + apiKey + "&number=100";
+        searchIngredients + "&apiKey=" + apiKey + "&number=50";
 
     http.get(url, function (result) {
         var body = "";
