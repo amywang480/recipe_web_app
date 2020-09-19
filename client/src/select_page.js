@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import TitleFrame from './images/frame.png';
 import Category from './components/category';
 import { Array } from './components/array';
+import Header from './images/ingredients-header.png';
 
 class Select extends React.Component {
   constructor(props) {
@@ -16,6 +17,10 @@ class Select extends React.Component {
       checkedItems: new Map(),
       selected: []
     }
+  }
+
+  componentDidMount() {
+    localStorage.clear();
   }
 
   handleChange(event) {
@@ -40,11 +45,11 @@ class Select extends React.Component {
 
   render() {
     return (
-      <div className='second-container'>
-        <center>
-          <img src={TitleFrame} alt='frame' className='title-frame'></img>
+      <div>
+        <div className='header' style={{ height: 250 }}>
           <h1 className='page-title'>Ingredients</h1>
-        </center>
+          <img className='header-img-1' src={Header}></img>
+        </div>
 
         <div className='ingre-checkbox'>
           <h2 className='category'>Sugars & Sweenteners</h2>
@@ -82,18 +87,26 @@ class Select extends React.Component {
           <h2 className='category'>Fruits</h2>
           <Category items={this.state.ingredients.fruits} handleChange={this.handleChange} />
 
+          <h2 className='category'>Vegetables</h2>
+          <Category items={this.state.ingredients.vegetables} handleChange={this.handleChange} />
+
           <div style={{ height: 50 }}></div>
 
           <center>
-            <Link to={{ pathname: "/matches", state: { selected: this.state.selected }, count: this.state.selected.length }}
-              style={{ textDecoration: 'none' }}>
-              <button className='find-recipe'>
-                Find Recipes
+            {this.state.selected.length == 0 ?
+              <div>
+                <button className='find-recipe' onClick={() => window.alert('Please select your ingredients')}>
+                  Find Recipes
+                </button>
+              </div> :
+              <Link to={{ pathname: "/matches", state: { selected: this.state.selected }, count: this.state.selected.length }}
+                style={{ textDecoration: 'none' }}>
+                <button className='find-recipe'>
+                  Find Recipes
               </button>
-            </Link>
+              </Link>
+            }
           </center>
-
-          <div style={{ height: 20 }}></div>
         </div>
       </div>
     );

@@ -11,6 +11,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testAPIRouter = require('./routes/getRecipesAPI');
 var recipeRouter = require('./routes/getRecipe');
+var ingreRouter = require('./routes/getIngredients');
 var app = express();
 
 // view engine setup
@@ -29,6 +30,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/getRecipesAPI', testAPIRouter);
 app.use('/getRecipe', recipeRouter);
+app.use('/getIngredients', ingreRouter);
 
 app.use(function (req, res, next) {
   //res.header("Access-Control-Allow-Origin", "http://localhost:9000/getRecipesAPI");

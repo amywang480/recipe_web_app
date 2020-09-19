@@ -1,22 +1,22 @@
 import React from 'react';
 import './App.css';
 import { Link } from "react-router-dom";
+import HomeImg from './images/ingredient-header.png';
 import frame from './images/frame.png';
 
 function Home() {
     return (
-        <div className='first-container'>
-            <img src={frame} alt='frame' className='frame'></img>
-            <section className='main'>
-                <pre>
-                    <h1 className='title'><span>Recipedia</span></h1>
-                    <Link to="/select" style={{ textDecoration: 'none' }} >
-                        <button className='button'>
-                            Enter Ingredients
-                        </button>
-                    </Link>
-                </pre>
-            </section>
+        <div>
+            <div className='full'>
+                <h1 className='title'>Recipedia</h1>
+                <text className='intro-text'>Fulfill your quarantine baking and<br />cooking needs by discovering recipes<br />that use your ingredients</text>
+                <Link to="/select" style={{ textDecoration: 'none' }} >
+                    <button className='home-button'>
+                        Select Ingredients
+                    </button>
+                </Link>
+                <img class='home-img' src={HomeImg}></img>
+            </div>
         </div>
     );
 }

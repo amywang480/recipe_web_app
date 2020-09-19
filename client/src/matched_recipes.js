@@ -10,7 +10,8 @@ const MatchedRecipes = ({ matched_recipes }) => {
     return (
         <div className='matches'>
             {matched_recipes.map((recipe) => (
-                <Link to={{ pathname: "/recipe", state: { id: recipe.id }, name: recipe.title }} style={{ textDecoration: 'none' }}>
+                <Link to={{ pathname: "/recipe", state: { id: recipe.id }, name: recipe.title, img: recipe.image }} 
+                style={{ textDecoration: 'none' }}>
                     <div className="recipe-card">
                         <div className="recipe-card-body">
                             <div className='image-overlay'>
@@ -24,7 +25,9 @@ const MatchedRecipes = ({ matched_recipes }) => {
                             <h2 className="recipe-text">{recipe.title}</h2>
                             <h4 className='recipe-text'>Missing Ingredients:</h4>
                             <div className='missing'>
-                                {recipe.missedIngredients.map((missed) => (
+                                {recipe.missedIngredients.length == 0 ? 
+                                    <h6 className='recipe-text'>None!<br /></h6> :
+                                recipe.missedIngredients.map((missed) => (
                                     <h6 className='recipe-text'>{capitalize(missed.name)}<br /></h6>
                                 ))}
                             </div>

@@ -18,7 +18,7 @@ const Category = ({ items, handleChange }) => {
                     name="checked"
                     color="primary"
                     style={{
-                        color: "#70c6a1"
+                        color: "#d2aff8"
                     }}
                 />
             }
