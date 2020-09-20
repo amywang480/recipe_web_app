@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import { Link } from "react-router-dom";
 import HomeImg from './images/ingredient-header.png';
-import frame from './images/frame.png';
 
 function Home() {
     return (

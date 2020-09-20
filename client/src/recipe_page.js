@@ -19,23 +19,6 @@ class Recipe extends React.Component {
 
         var id = this.props.location.state.id;
 
-
-
-        /*fetch('http://localhost:9000/getIngredients?id=' + id)
-            .then(res => res.json())
-            .then((data) => {
-                this.setState({ all_ingredients: data })
-            })
-            .catch(console.log)
-
-        fetch('http://localhost:9000/getRecipe?id=' + id)
-            .then(res => res.json())
-            .then((data) => {
-                this.setState({ full_recipe: data })
-            })
-            .catch(console.log)*/
-
-
         Promise.all([
             fetch('http://localhost:9000/getIngredients?id=' + id),
             fetch('http://localhost:9000/getRecipe?id=' + id)

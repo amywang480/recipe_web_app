@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import { Link } from "react-router-dom";
-import TitleFrame from './images/frame.png';
 import Category from './components/category';
 import { Array } from './components/array';
 import Header from './images/ingredients-header.png';
@@ -90,6 +89,18 @@ class Select extends React.Component {
           <h2 className='category'>Vegetables</h2>
           <Category items={this.state.ingredients.vegetables} handleChange={this.handleChange} />
 
+          <h2 className='category'>Grains</h2>
+          <Category items={this.state.ingredients.grains} handleChange={this.handleChange} />
+
+          <h2 className='category'>Dairy</h2>
+          <Category items={this.state.ingredients.dairy} handleChange={this.handleChange} />
+
+          <h2 className='category'>Meat</h2>
+          <Category items={this.state.ingredients.meat} handleChange={this.handleChange} />
+
+          <h2 className='category'>Nuts</h2>
+          <Category items={this.state.ingredients.nuts} handleChange={this.handleChange} />
+
           <div style={{ height: 50 }}></div>
 
           <center>
@@ -104,8 +115,7 @@ class Select extends React.Component {
                 <button className='find-recipe'>
                   Find Recipes
               </button>
-              </Link>
-            }
+              </Link>}
           </center>
         </div>
       </div>
